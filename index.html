@@ -678,6 +678,180 @@
       font-size: 15px;
     }
 
+
+    /* ===== SECURITY BLOCK ===== */
+    .security-section {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 32px 28px;
+      margin-bottom: 28px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      border-left: 5px solid #047857;
+    }
+
+    .security-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .security-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .security-comparison {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 600px) {
+      .security-comparison {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .security-vs {
+        transform: rotate(90deg);
+        margin: 8px 0;
+      }
+    }
+
+    .security-card {
+      padding: 24px 20px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .security-card.cloud {
+      background: linear-gradient(135deg, rgba(239,68,68,0.08) 0%, rgba(251,191,36,0.08) 100%);
+      border: 2px solid #fbbf24;
+    }
+
+    .security-card.local {
+      background: linear-gradient(135deg, rgba(4,120,87,0.08) 0%, rgba(16,185,129,0.08) 100%);
+      border: 2px solid #047857;
+    }
+
+    .security-card-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .security-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .security-card-metaphor {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      padding: 12px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 10px;
+    }
+
+    .security-card-result {
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .security-card.cloud .security-card-result {
+      background: rgba(239,68,68,0.15);
+      color: #dc2626;
+    }
+
+    .security-card.local .security-card-result {
+      background: rgba(4,120,87,0.15);
+      color: #047857;
+    }
+
+    .security-vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--text-muted);
+    }
+
+    .security-usecases {
+      background: var(--bg-subtle);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .security-usecases-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .security-usecases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 500px) {
+      .security-usecases-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .security-usecase-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+
+    .security-usecase-item:hover {
+      border-color: #047857;
+      transform: translateX(4px);
+    }
+
+    .security-usecase-item::before {
+      content: '\2705';
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .security-conclusion {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, rgba(4,120,87,0.1) 0%, rgba(16,185,129,0.05) 100%);
+      border-radius: 12px;
+      border-left: 4px solid #047857;
+      font-size: 15px;
+      color: var(--text-primary);
+      font-weight: 500;
+      text-align: center;
+    }
     /* ===== ADS FRAMEWORK ===== */
     .ads-framework {
       background: var(--bg-card);
@@ -1491,6 +1665,67 @@
               <li>リモートデスクトップで手元操作</li>
               <li>インターネット不要で動作</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY BLOCK -->
+    <section id="security-section">
+      <div class="section-header" onclick="toggleSection('security-section')">
+        <div class="section-header-left">
+          <div class="section-icon">🔒</div>
+          <div class="section-info">
+            <div class="section-title">ローカルLLMによるセキュアなタスク処理</div>
+            <div class="section-subtitle">機密情報を外部に出さずにAI活用</div>
+          </div>
+        </div>
+        <div class="section-toggle">▼</div>
+      </div>
+      <div class="section-content" id="security-section-content">
+        <div class="security-section">
+          <h3 class="security-title">🔒 なぜ「ローカルLLM」なら安心なの？</h3>
+          <p class="security-subtitle">ITに詳しくなくても大丈夫。イメージで理解できます</p>
+
+          <div class="security-comparison">
+            <div class="security-card cloud">
+              <div class="security-card-icon">☁️</div>
+              <div class="security-card-title">クラウドAI</div>
+              <div class="security-card-metaphor">
+                大事な書類を<br>
+                <strong>外部のコピー屋さん</strong>に<br>
+                送って処理してもらう
+              </div>
+              <div class="security-card-result">途中で見られるリスクあり</div>
+            </div>
+
+            <div class="security-vs">VS</div>
+
+            <div class="security-card local">
+              <div class="security-card-icon">🏠</div>
+              <div class="security-card-title">ローカルLLM</div>
+              <div class="security-card-metaphor">
+                大事な書類を<br>
+                <strong>会社の金庫の中</strong>で<br>
+                自分で処理する
+              </div>
+              <div class="security-card-result">データが外に出ない</div>
+            </div>
+          </div>
+
+          <div class="security-usecases">
+            <div class="security-usecases-title">
+              <span>💼</span> こんな時に安心
+            </div>
+            <div class="security-usecases-grid">
+              <div class="security-usecase-item">顧客リストを分析したい</div>
+              <div class="security-usecase-item">契約書の内容をAIでチェック</div>
+              <div class="security-usecase-item">社内の機密資料を要約したい</div>
+              <div class="security-usecase-item">個人情報を含むデータを処理</div>
+            </div>
+            <div class="security-conclusion">
+              → すべて「外に出さずに」AIに処理させられます
+            </div>
           </div>
         </div>
       </div>
