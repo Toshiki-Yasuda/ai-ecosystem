@@ -521,6 +521,7 @@
     }
 
     .section-content {
+      max-height: 5000px;
       overflow: hidden;
       transition: max-height 0.4s ease, opacity 0.3s ease;
       opacity: 1;
@@ -1396,6 +1397,7 @@
     }
 
     .section-content {
+      max-height: 5000px;
       transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
     }
 
@@ -2106,12 +2108,9 @@
       // タイプライターアニメーション開始
       setTimeout(startTypewriterAnimation, 400);
 
-      // デフォルトで全セクションを閉じた状態にする
-      document.querySelectorAll('.section-header').forEach(h => {
-        h.classList.add('collapsed');
-      });
+      // デフォルトで全セクションを開いた状態にする
       document.querySelectorAll('.section-content').forEach(c => {
-        c.classList.add('collapsed');
+        c.style.maxHeight = c.scrollHeight + 'px';
       });
 
       // スクロールアニメーション設定
